@@ -1,0 +1,114 @@
+.job-cards {
+    display: grid;
+    grid-template-columns: repeat(var(--card-count), 1fr);
+    gap: 2rem;
+    color: rgba(0, 0, 0, 0.87);
+
+    .job-card {
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.25);
+        font-size: 10px;
+        .job-card-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .posted-date {
+            font-size: 1.1em;
+            width: max-content;
+            padding: 4px 6px;
+            box-shadow: rgba(6, 6, 6, 0.05) 0px 2px 6px 0px;
+            border-radius: 10px;
+            border: 1px solid rgb(230, 230, 230);
+        }
+        .job-header {
+            display: flex;
+            gap: 8px;
+            .logo {
+                width: 100%;
+                max-width: 3rem;
+                object-fit: contain;
+            }
+        }
+        .job-header-content {
+            display: flex;
+            flex-direction: column;
+            .company-name {
+                font-size: 1.25em;
+            }
+            .job-name {
+                font-size: 1.4em;
+                text-transform: capitalize;
+            }
+            .job-location {
+                font-size: 1.2em;
+                text-transform: capitalize;
+            }
+        }
+        .job-payscale {
+            p {
+                font-size: 1.25em;
+            }
+        }
+        .about {
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            h2 {
+                font-size: 1.5em;
+                font-size: 500;
+            }
+            p {
+                font-size: 1.4em;
+            }
+            p:not(:last-child) {
+                margin-bottom: 0.75em;
+            }
+
+            .show-more {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 5rem;
+                padding-bottom: 0.5rem;
+                display: flex;
+                justify-content: center;
+                background: rgb(255, 255, 255);
+                background: linear-gradient(0, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
+                cursor: pointer;
+                font-weight: 300;
+                font-size: 0.875rem;
+                text-transform: capitalize;
+                color: blue;
+            }
+        }
+        .experience {
+            font-size: 1.4em;
+        }
+        .apply {
+            background-color: rgb(85, 239, 196);
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+            display: block;
+            width: 100%;
+            font-weight: 500;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+    .job-card {
+        transition: all 300ms ease-in-out;
+        scale: 0.98;
+    }
+
+    .job-card:hover {
+        scale: 1;
+    }
+}

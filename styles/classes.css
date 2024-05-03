@@ -1,0 +1,13 @@
+.main-wrapper {
+    padding-block: 2rem;
+    background: #fff;
+}
+.main-wrapper > *:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: var(--width-container);
+    padding-inline: var(--padding-container);
+    margin: auto;
+}

@@ -1,9 +1,11 @@
-import "./App.css";
+import JobCards from "../components/JobCards..jsx";
 
 function App() {
     return (
         <>
-            <h2>Redux setup done</h2>
+            <main className="main-wrapper">
+                <JobCards />
+            </main>
         </>
     );
 }

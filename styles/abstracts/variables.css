@@ -1,0 +1,22 @@
+:root {
+    --clr-bg: blue;
+    --width-container: 1140px;
+    --padding-container: 4rem;
+    --card-count: 3;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --width-container: 100%;
+        --padding-container: 2rem;
+        --card-count: 1;
+    }
+}
+/* tablet breakpoints */
+@media screen and ((min-width: 600px) and (max-width: 1200px)) {
+    :root {
+        --width-container: calc(720px + 10vw);
+        --padding-container: 1rem;
+        --card-count: 2;
+    }
+}
