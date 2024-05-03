@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import Modal from "./Modal.jsx";
 
 const JobCard = () => {
+    const [modal, setModal] = useState(false);
     return (
         <div className="job-card">
+            <Modal openModal={modal} closeModal={() => setModal(false)} />
             <div className="job-card-wrapper">
                 <small className="posted-date">⏳ Posted a day ago</small>
                 <div className="job-header">
@@ -32,7 +35,9 @@ const JobCard = () => {
                         eaque fugiat sunt ratione voluptatum tempore nostrum laborum minima blanditiis eius?
                     </p>
 
-                    <span className="show-more">Show more</span>
+                    <span className="show-more" onClick={() => setModal(true)}>
+                        Show more
+                    </span>
                 </div>
                 <div className="experience">
                     <p>Minimum Experience</p>

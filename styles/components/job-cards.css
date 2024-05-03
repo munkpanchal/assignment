@@ -112,3 +112,62 @@
         scale: 1;
     }
 }
+
+dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 1rem 0;
+
+    border-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    width: min(750px, 100%);
+    aspect-ratio: 3/4;
+    @media screen and (min-width: 600px) {
+        & {
+            aspect-ratio: 4/3;
+        }
+    }
+}
+
+.dialog-wrapper {
+    padding: 0 2rem;
+    width: 100%;
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+dialog {
+    h1 {
+        font-size: 1.75;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    h2 {
+        font-size: 1.25em;
+        margin-bottom: 0.5rem;
+    }
+    p:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+dialog::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 4px;
+}
+
+dialog::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px blue;
+}
+
+dialog::-webkit-scrollbar-thumb {
+    background-color: skyblue;
+    outline: 1px solid skyblue;
+}
