@@ -37,22 +37,32 @@ const JobCards = () => {
     };
 
     const filteredData = data.filter(applyFilters);
+    const handleInfiniteScroll = async () => {
+        if (document.documentElement.scrollTop + window.innerHeight + 1 > document.documentElement.scrollHeight) {
+            setOffset((next) => (next = offset + 9));
+        }
+    };
 
     useEffect(() => {
         dispatch(updateJobs(offset));
     }, [offset]);
-
+    useEffect(() => {
+        window.addEventListener("scroll", handleInfiniteScroll);
+        return () => window.removeEventListener("scroll", handleInfiniteScroll);
+    }, [handleInfiniteScroll]);
     return (
-        <section className="container">
-            <div className="job-cards">
-                {filteredData?.map((job, idx) => (
-                    <Fragment key={idx}>
-                        <JobCard data={job} />
-                    </Fragment>
-                ))}
-            </div>
-            {pending && "Loading.."}
-        </section>
+        <>
+            <section className="container">
+                <div className="job-cards">
+                    {filteredData?.map((job, idx) => (
+                        <Fragment key={idx}>
+                            <JobCard data={job} />
+                        </Fragment>
+                    ))}
+                </div>
+                {pending && "Loading.."}
+            </section>
+        </>
     );
 };
 

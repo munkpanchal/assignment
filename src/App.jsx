@@ -1,5 +1,5 @@
 import Filters from "../components/Filters.jsx";
-import JobCards from "../components/JobCards..jsx";
+import JobCards from "../components/JobCards.jsx";
 
 function App() {
     return (
