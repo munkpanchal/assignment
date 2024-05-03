@@ -16,6 +16,20 @@ const JobCards = () => {
         if (filters.location.length > 0 && !filters.location.includes(job.location.toLowerCase())) {
             return false;
         }
+        if (
+            filters.companyName.length > 0 &&
+            filters.companyName !== "" &&
+            !filters.companyName.includes(job.companyName.toLowerCase())
+        ) {
+            return false;
+        }
+        if (filters.role.length > 0 && filters.role !== "" && !filters.role.includes(job.jobRole.toLowerCase())) {
+            return false;
+        }
+
+        if (filters.minBasePay && filters.minBasePay !== "" && job.minJdSalary < Number(filters.minBasePay)) {
+            return false;
+        }
 
         if (filters.isRemote) {
             if (job.location !== "remote") {
