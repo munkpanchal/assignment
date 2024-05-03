@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
 
 export const updateJobs = createAsyncThunk("updateJobs", async (offset) => {
     const apiUrl = "https://api.weekday.technology/adhoc/getSampleJdJSON";
@@ -64,5 +64,15 @@ export const jobsSlice = createSlice({
     },
 });
 
-export const { updateFilter } = jobsSlice.actions;
+export const {
+    updateFilter,
+    updateMinExperience,
+    updateCompanyName,
+    updateLocation,
+    removeLocation,
+    updateRemote,
+    updateTechStack,
+    updateRole,
+    updateMinBasePay,
+} = jobsSlice.actions;
 export default jobsSlice.reducer;

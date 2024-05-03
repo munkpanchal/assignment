@@ -1,7 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFilter } from "../../redux/slices/jobSlice.js";
+import { updateFilter, updateLocation } from "../../redux/slices/jobSlice.js";
 
 const LocationFilter = () => {
     const state = useSelector((state) => state.jobReducer);

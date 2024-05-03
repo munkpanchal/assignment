@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import JobCard from "./JobCard.jsx";
-import { updateJobs } from "../redux/slices/jobSlice.js";
+import { updateJobs, updateLocation } from "../redux/slices/jobSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 
 const JobCards = () => {
